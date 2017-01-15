@@ -1,0 +1,35 @@
+{
+  "name": "rewindable-stream",
+  "version": "2.2.1",
+  "description": "Allows adding human input to data streams in node.js",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib/",
+    "doc": "docs/",
+    "example": "samples/"
+  },
+  "keywords": [
+    "stream",
+    "rewind",
+    "restart",
+    "reload",
+    "start from begining"
+  ],
+  "scripts": {
+    "test": "gulp test",
+    "preversion": "gulp prerelease"
+  },
+  "homepage": "https://michalcz.github.io/scramjet/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MichalCz/scramjet.git"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "author": "Signicode / Michał Czapracki <cz@signicode.com>",
+  "license": "MIT",
+  "dependencies": {
+    "scramjet": "^2.2.1"
+  }
+}
