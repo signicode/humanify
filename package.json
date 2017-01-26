@@ -30,6 +30,8 @@
   "author": "Signicode / Michał Czapracki <cz@signicode.com>",
   "license": "MIT",
   "dependencies": {
-    "scramjet": "^2.2.1"
+    "http-server": "^0.9.0",
+    "scramjet": "^2.2.1",
+    "socket.io": "^1.7.2"
   }
 }
