@@ -14,15 +14,17 @@ process.stdin
         })
     )
     .pipe(
-        new Humanize({
-            port: 8080
-        })
+        new Humanize({})
+    )
+    .listen(8080)
+    .on(
+        "error", (e) => console.error(e && e.stack)
     )
     .tee(
         (stream) => stream.toStringStream(
             (item) => "item:" + (item.answer ? "passed   " : "filtered ") + item.title + '/' + item.item.content + "\n"
-        ).pipe(
-            process.stderr
+        ).each(
+            item => process.stderr.write(item)
         )
     )
     .filter(
@@ -37,9 +39,9 @@ process.stdin
         )
     )
     .toStringStream(
-        (item) => item.md5 + '|' + item.title + '|' + item.content
+        (item) => item.md5 + '|' + item.title + '|' + item.content + "\n"
     )
-    .pipe(
-        process.stdout
+    .each(
+        item => process.stdout.write(item)
     )
 ;
