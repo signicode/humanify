@@ -11,23 +11,23 @@
         <div class="app">
             <div class="main" id="top">
                 <div class="container-fluid cardholder" id="questions">
-                    <script id="card-template" type="x-handlebars-template">​
-                        <div class="card" style="width: 22rem;">
+                    <script id="card-template" type="x-handlebars-template"><div class="card question" id="{{cardId}}" style="width: 22rem;" data-queryid="{{queryId}}">
                             <div class="card-block">
-                                <h4 class="card-title">{{title}}</h4>
-                                <div class="card-content">
-                                    {{content}}
-                                </div>
+                                {{#with item}}
+                                    <h4 class="card-title">{{title}}</h4>
+                                    <div class="card-content">
+                                        {{content}}
+                                    </div>
+                                {{/with}}
                                 <div class="text-center">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                    <div class="btn-group" role="group">
                                         {{#each buttons}}
-                                            <button type="button" class="btn btn-{{type}}">{{caption}}</button>
+                                            <button type="button" data-index="{{@index}}" class="btn btn-{{type}}">{{caption}}</button>
                                         {{/each}}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </script>
+                        </div></script>
 
                 </div>
             </div>
