@@ -17,7 +17,6 @@ process.stdin
         new Humanize({})
     )
     .listen(8080)
-    .each(console.log.bind(console, "aaa"))
     .on(
         "error", (e) => console.error(e && e.stack)
     )
