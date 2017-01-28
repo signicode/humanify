@@ -1,6 +1,6 @@
 const scramjet = require('scramjet');
 const Humanize = require('..');
-const request = require('request-promise');
+// const request = require('request-promise');
 
 process.stdin
     .pipe(new scramjet.StringStream())
@@ -17,29 +17,18 @@ process.stdin
         new Humanize({})
     )
     .listen(8080)
+    .each(console.log.bind(console, "aaa"))
     .on(
         "error", (e) => console.error(e && e.stack)
-    )
-    .tee(
-        (stream) => stream.toStringStream(
-            (item) => "item:" + (item.answer ? "passed   " : "filtered ") + item.title + '/' + item.item.content + "\n"
-        ).each(
-            item => process.stderr.write(item)
-        )
     )
     .filter(
         (item) => item.answer
     )
     .map(
-        (item) => request.post({
-            url: 'http://localhost:8091',
-            body: item.item.content
-        }).then(
-            (res) => Object.assign({md5: res}, item)
-        )
+        item => item.item
     )
     .toStringStream(
-        (item) => item.md5 + '|' + item.title + '|' + item.content + "\n"
+        (item) => item.title + '|' + item.content + "\n"
     )
     .each(
         item => process.stdout.write(item)

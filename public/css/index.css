@@ -42,6 +42,11 @@ body {
     left:0;
 }
 
+.main {
+    position: absolute;
+    bottom: 0;
+}
+
 .cardholder {
     white-space: nowrap;
 }
