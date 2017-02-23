@@ -1,5 +1,5 @@
 const scramjet = require('scramjet');
-const Humanize = require('..');
+const Humanify = require('..');
 // const request = require('request-promise');
 
 const ref = [
@@ -17,10 +17,10 @@ process.stdin
         user: arr[0],
         content: arr[1]
     }))
-    .pipe(new Humanize({buttons: [
-        {value: 1, caption: 'acknowledge', type: 'primary', kb: ['yY', 37]},
-        {value: 2, caption: 'escalate', type: 'main', kb: ['eE', 38]},
-        {value: 0, caption: 'delete', type: 'warning', kb: ['nN', 39]}
+    .pipe(new Humanify({buttons: [
+        {value: 0, caption: 'usuń', type: 'danger', kb: ['nN', 39]},
+        {value: 2, caption: 'eskaluj', type: 'warning', kb: ['eE', 38]},
+        {value: 1, caption: 'zaakceptuj', type: 'success', kb: ['yY', 37]},
     ]})).listen(8080)
     .on("error", (e) => console.error(e && e.stack))
     .toStringStream(item => ref[item.answer] + ': <' + item.item.user + '> "'+item.item.content.substr(0,120)+'..."' + "\n")

@@ -1,5 +1,5 @@
 const scramjet = require('scramjet');
-const Humanize = require('..');
+const Humanify = require('..');
 // const request = require('request-promise');
 
 process.stdin
@@ -9,7 +9,7 @@ process.stdin
         title: line.substr(0, line.indexOf('|')),
         content: line.substring(line.indexOf('|') + 1)
     }))
-    .pipe(new Humanize({buttons: [
+    .pipe(new Humanify({buttons: [
         {value: 1, caption: 'yes', type: 'primary', kb: ['yY', 37]},
         {value: 2, caption: 'escalate', type: 'main', kb: ['eE', 38]},
         {value: 0, caption: 'no', type: 'warning', kb: ['nN', 39]}
