@@ -1,5 +1,5 @@
 const { StringStream } = require('scramjet');
-const Humanify = require('..');
+const { Humanify } = require('..');
 // const request = require('request-promise');
 
 const ref = [

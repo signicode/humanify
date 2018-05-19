@@ -1,9 +1,9 @@
-const scramjet = require('scramjet');
-const Humanify = require('..');
+const { StringStream } = require('scramjet');
+const { Humanify } = require('..');
 // const request = require('request-promise');
 
 process.stdin
-    .pipe(new scramjet.StringStream())
+    .pipe(new StringStream())
     .split("\n")
     .parse((line) => ({
         title: line.substr(0, line.indexOf('|')),

@@ -1,13 +1,8 @@
 {
-  "name": "rewindable-stream",
-  "version": "2.2.1",
+  "name": "humanify",
+  "version": "0.9.0~pre",
   "description": "Allows adding human input to data streams in node.js",
   "main": "lib/index.js",
-  "directories": {
-    "lib": "lib/",
-    "doc": "docs/",
-    "example": "samples/"
-  },
   "keywords": [
     "stream",
     "rewind",
@@ -15,19 +10,15 @@
     "reload",
     "start from begining"
   ],
-  "scripts": {
-    "test": "gulp test",
-    "preversion": "gulp prerelease"
-  },
-  "homepage": "https://michalcz.github.io/scramjet/",
+  "homepage": "https://scramjet.eu/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MichalCz/scramjet.git"
+    "url": "https://github.com/signicode/humanify.git"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
-  "author": "Signicode / Michał Czapracki <cz@signicode.com>",
+  "author": "Signicode cz@signicode.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.3",
