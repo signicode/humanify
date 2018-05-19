@@ -1,14 +1,16 @@
 {
   "name": "humanify",
-  "version": "0.9.0~pre",
+  "version": "0.9.0",
   "description": "Allows adding human input to data streams in node.js",
   "main": "lib/index.js",
   "keywords": [
     "stream",
-    "rewind",
-    "restart",
-    "reload",
-    "start from begining"
+    "human",
+    "machine interaction",
+    "learning",
+    "moderation",
+    "workforce",
+    "automation"
   ],
   "homepage": "https://scramjet.eu/",
   "repository": {

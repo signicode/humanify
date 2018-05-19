@@ -27,7 +27,7 @@ As an interface though you may expect that no breaking changes are intended to b
 
 This results in an app like this:
 
-[Humanify App Screenshot](screenshot.png)
+![Humanify App Screenshot](screenshot.png)
 
 ## API
 
