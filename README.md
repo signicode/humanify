@@ -1,3 +1,5 @@
+![Humanify Logo](humanify-logo.png)
+
 ## What does it do?
 
 **Humanify** is a free and open source server and web application, written in Node.js, that allows adding human intelligence to data streaming in scenarios where computers are not suitable to make.
