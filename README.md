@@ -1,3 +1,5 @@
+![Humanify Logo](humanify-logo.png)
+
 ## What does it do?
 
 **Humanify** is a free and open source server and web application, written in Node.js, that allows adding human intelligence to data streaming in scenarios where computers are not suitable to make.
@@ -56,6 +58,14 @@ Button definition:
         type: 'primary',    // bootstrap type (in essence it's the button's class)
         kb: ['yY', 37]      // keyboard scan code to assign as shortcut
     },
+```
+
+### Samples
+
+Samples are in the `test` directory, try to run them like this:
+
+```bash
+cat test/data/comments.txt | node test/sample-comments.js
 ```
 
 ## Plans
