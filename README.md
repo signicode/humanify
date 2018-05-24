@@ -58,6 +58,14 @@ Button definition:
     },
 ```
 
+### Samples
+
+Samples are in the `test` directory, try to run them like this:
+
+```bash
+cat test/data/comments.txt | node test/sample-comments.js
+```
+
 ## Plans
 
 * Extract the data front-end library from sample app
