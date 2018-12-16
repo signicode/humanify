@@ -1,4 +1,5 @@
 ![Humanify Logo](humanify-logo.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsignicode%2Fhumanify.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsignicode%2Fhumanify?ref=badge_shield)
 
 ## What does it do?
 
@@ -78,3 +79,6 @@ cat test/data/comments.txt | node test/sample-comments.js
 ## License
 
 Humanify is licensed as MIT. See LICENSE file in this repo.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsignicode%2Fhumanify.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsignicode%2Fhumanify?ref=badge_large)
