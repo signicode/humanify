@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "digest-stream": "^2.0.0",
-    "eslint": "^5.12.1",
+    "eslint": "^5.13.0",
     "eslint-config-defaults": "^9.0.0",
     "eslint-plugin-node": "^8.0.1",
     "request": "^2.88.0",
