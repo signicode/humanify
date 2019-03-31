@@ -24,12 +24,12 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "scramjet": "^4.22.2",
+    "scramjet": "^4.22.3",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "digest-stream": "^2.0.0",
-    "eslint": "^5.15.3",
+    "eslint": "^5.16.0",
     "eslint-config-defaults": "^9.0.0",
     "eslint-plugin-node": "^8.0.1",
     "request": "^2.88.0",
