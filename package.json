@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "scramjet": "^4.22.3",
+    "scramjet": "^4.23.0",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
