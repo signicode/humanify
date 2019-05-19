@@ -9,24 +9,37 @@ In just a couple lines of code **Humanify** will ingest your data stream, open a
 
 Think of it as an open-source, on-premise alternative to Amazon Mechanical Turk that you can alter to your own liking.
 
-## State of system
-
-What you're looking at is a system that has been successfully used by [Signicode](https://www.signicode.com) in a number of business cases as the company's internal software. This here is an early release that will undergo major development in the following months.
-
-As an interface though you may expect that no breaking changes are intended to be introduced to the current API - so feel free to post an issue if we do, we'll be fixing those as soon as possible.
-
 ## Usage
 
-```javascript
-    const { Humanify } = require("humanify");
+```bash
+npm install -s humanify
+```
 
-    streamOfRequests.pipe(new Humanify({buttons: [
+With [scramjet](https://www.scramjet.org) stream:
+
+```javascript
+    streamOfRequests.use("humanify", {buttons: [
         {value: 0, caption: 'Remove', type: 'danger', kb: ['rR', 39]},
         {value: 2, caption: 'Escalate', type: 'warning', kb: ['eE', 38]},
         {value: 1, caption: 'Accept', type: 'success', kb: ['aA', 37]},
-    ]})).listen(8080)
+    ]})
     // do something with your data-stream
 ```
+
+With any other node.js stream:
+
+```javascript
+    import humanify from "humanify";
+
+    humanify(streamOfRequests, {buttons: [
+        {value: 0, caption: 'Remove', type: 'danger', kb: ['rR', 39]},
+        {value: 2, caption: 'Escalate', type: 'warning', kb: ['eE', 38]},
+        {value: 1, caption: 'Accept', type: 'success', kb: ['aA', 37]},
+    ]})
+    // do something with your data-stream
+```
+
+The app will show at: http://localhost:8666/
 
 This results in an app like this:
 
@@ -34,12 +47,7 @@ This results in an app like this:
 
 ## API
 
-Humanify is based on [`scramjet..DataStream`](https://github.com/signicode/scramjet#datastream--streampassthrough) so you can use all methods there.
-
-Humanify exposes the following methods on the resulting stream:
-
-* `constructor(options)` - creates the stream
-* `listen(...args)` - starts listening to the server (args are passed to node built-in `HttpServer..listen` method)
+Humanify is a [Scramjet Module](https://www.scramjet.org/docs/scramjet-modules) and you can use it with any stream.
 
 Options are:
 
@@ -48,7 +56,7 @@ Options are:
 * `root` - root path for application to start (default: public folder in humanify root)
 * `buttons` - list of buttons that are show to users
 * `maxBufferLength` - how many items to show to users
-* `logger` - logger to use, default: `console`
+* `logger` - logger to use, default: `{[*]: mute}`
 
 Button definition:
 
@@ -66,7 +74,16 @@ Button definition:
 Samples are in the `test` directory, try to run them like this:
 
 ```bash
-cat test/data/comments.txt | node test/sample-comments.js
+node test/sample-comments.js
+```
+
+Then run the browser, point it to `http://localhost:8666/` and push some buttons there. In console you'll see the effect of your choices:
+
+```
+16:39 $ node test/sample-comments.js
+REQUESTING CONTACT    : <Sequoyah Miina> "Ad quorum et cognitionem et usum iam corroborati natura ipsa praeeunte deducimur. Cuius ad naturam apta ratio vera illa ..."
+SENDING 'THANK YOU'   : <Deimos Bengta> "Omnia peccata paria dicitis. Nam quibus rebus efficiuntur voluptates, eae non sunt in potestate sapientis. Illa argument..."
+REMOVING FROM FACEBOOK: <Aoibhín Cătălin> "Illa argumenta propria videamus, cur omnia sint paria peccata. Eam tum adesse, cum dolor omnis absit; Si quicquam extra ..."
 ```
 
 ## Plans
