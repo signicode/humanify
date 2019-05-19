@@ -23,8 +23,8 @@
   "author": "Signicode cz@signicode.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4",
-    "scramjet": "^4.24.1",
+    "express": "^4.17.0",
+    "scramjet": "^4.24.2",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
