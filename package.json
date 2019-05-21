@@ -10,7 +10,10 @@
     "learning",
     "moderation",
     "workforce",
-    "automation"
+    "automation",
+    "mechanical",
+    "turk",
+    "mturk"
   ],
   "homepage": "https://scramjet.eu/",
   "repository": {
@@ -30,8 +33,7 @@
   "devDependencies": {
     "digest-stream": "^2.0.0",
     "eslint": "^5.16.0",
-    "eslint-config-defaults": "^9.0.0",
-    "eslint-plugin-node": "^9.0.1",
+    "eslint-config-scramjet": "^1.0.4",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   }
