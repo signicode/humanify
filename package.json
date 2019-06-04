@@ -10,7 +10,10 @@
     "learning",
     "moderation",
     "workforce",
-    "automation"
+    "automation",
+    "mechanical",
+    "turk",
+    "mturk"
   ],
   "homepage": "https://scramjet.eu/",
   "repository": {
@@ -23,15 +26,14 @@
   "author": "Signicode cz@signicode.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.0",
-    "scramjet": "^4.24.2",
+    "express": "^4.17.1",
+    "scramjet": "^4.25.0",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "digest-stream": "^2.0.0",
     "eslint": "^5.16.0",
-    "eslint-config-defaults": "^9.0.0",
-    "eslint-plugin-node": "^9.0.1",
+    "eslint-config-scramjet": "^1.0.4",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   }
