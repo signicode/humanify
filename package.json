@@ -27,12 +27,12 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "scramjet": "^4.26.0",
+    "scramjet": "^4.26.1",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "digest-stream": "^2.0.0",
-    "eslint": "^6.2.2",
+    "eslint": "^6.3.0",
     "eslint-config-scramjet": "^2.0.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"

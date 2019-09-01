@@ -7,12 +7,7 @@
     const tpl = Handlebars.compile($("#card-template").html());
     const liveQuestions = {};
 
-    $("body").on("mousewheel", function(event, delta) {
-        this.scrollLeft -= (delta * 30);
-        event.preventDefault();
-    });
-
-    const socket = io("/");
+    const socket = io(location.pathname);
     $("#questions").on("click", ".question .btn", (btn) => {
         const but = $(btn.target);
         const queryId = but.parents(".question").data().queryid;
