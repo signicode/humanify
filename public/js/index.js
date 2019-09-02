@@ -4,15 +4,15 @@
     /* globals io, Handlebars */
     let seq = 0;
 
-    const tpl = Handlebars.compile($("#card-template").html());
+    const cardTemplate = $("#card-template").html();
+    const tpl = Handlebars.compile(cardTemplate);
+
     const liveQuestions = {};
 
-    $("body").on("mousewheel", function(event, delta) {
-        this.scrollLeft -= (delta * 30);
-        event.preventDefault();
-    });
+    const base = location.pathname.replace(/\/(([^\/]\.[^\/]))?$/, '');
+    console.log(`Connecting to ${base}`)
+    const socket = io(base);
 
-    const socket = io("/");
     $("#questions").on("click", ".question .btn", (btn) => {
         const but = $(btn.target);
         const queryId = but.parents(".question").data().queryid;
@@ -22,17 +22,23 @@
     });
 
     socket.on("connect", () => {
-
+        console.info("Connected");
     });
+
     socket.on("inquiry", (data) => {
         liveQuestions[data.queryId] = data.cardId = "ref-" + seq++;
-        $("#questions").append(tpl(data));
+        const out = tpl(data);
+        console.info("inquiry", data, out);
+        $("#questions").append(out);
     });
+
     socket.on("outquiry", (id) => {
+        console.info("outquiry", id);
         $("#" +liveQuestions[id]).remove();
     });
-    socket.on("disconnect", () => {
 
+    socket.on("disconnect", () => {
+        console.info("disconnect");
     });
 
 })(jQuery);
