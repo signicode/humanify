@@ -7,7 +7,7 @@ declare module 'humanify' {
     interface HumanifyChoice {
         value: any;
         caption: string;
-        string: type;
+        type: string;
         kb: any[];
     }
 
@@ -19,10 +19,9 @@ declare module 'humanify' {
         debug: Function;
     }
 
-    interface HumanifyOptions {
-        serialize?: Function;
-        deserialize?: Function;
-        humanifyWorker?: Humanify;
+    export interface HumanifyOptions {
+        serialize?: (chunk: any) => string;
+        deserialize?: (data: string) => any;
         root?: string;
         buttons?: HumanifyChoice[];
         duplicates?: number;

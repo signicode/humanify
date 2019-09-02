@@ -53,10 +53,24 @@ Options are:
 
 * `serialize` - serialization method for your data (default: `JSON.stringify`)
 * `deserialize` - serialization method for your data (default: `JSON.parse`)
+* `port` - the port on which the humanify app should listen on (default: `8666`)
+* `host` - the host on which the humanify app should listen on (default: `0.0.0.0`)
+* `base` - a path on which humanify app should be exposed (usefull if you'd like a couple instances)
 * `root` - root path for application to start (default: public folder in humanify root)
 * `buttons` - list of buttons that are show to users
 * `maxBufferLength` - how many items to show to users
 * `logger` - logger to use, default: `{[*]: mute}`
+
+
+Additionally you could also pass an option to reuse an existing server:
+
+```javascript
+{server: {
+    app,    // the express-compatible app to hook middleware on
+    io,     // the socket.io server instance
+    http    // the http server humanify should hook up to.
+}}
+```
 
 Button definition:
 
