@@ -27,6 +27,7 @@ declare module 'humanify' {
         duplicates?: number;
         minAnswers?: number;
         logger?: Logger;
+        itemParser: function({buttons: HumanifyChoice[], item: Object}) : {buttons: HumanifyChoice[], item?: Object}
         maxBufferLength?: number;
     }
 

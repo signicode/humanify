@@ -55,12 +55,12 @@ Options are:
 * `deserialize` - serialization method for your data (default: `JSON.parse`)
 * `port` - the port on which the humanify app should listen on (default: `8666`)
 * `host` - the host on which the humanify app should listen on (default: `0.0.0.0`)
-* `base` - a path on which humanify app should be exposed (usefull if you'd like a couple instances)
+* `base` - a path on which humanify app should be exposed (useful if you'd like a couple instances)
 * `root` - root path for application to start (default: public folder in humanify root)
 * `buttons` - list of buttons that are show to users
 * `maxBufferLength` - how many items to show to users
 * `logger` - logger to use, default: `{[*]: mute}`
-
+* `itemParser` - an async function that allows to enrich entries just before sending them to the application
 
 Additionally you could also pass an option to reuse an existing server:
 
@@ -81,6 +81,19 @@ Button definition:
         type: 'primary',    // bootstrap type (in essence it's the button's class)
         kb: ['yY', 37]      // keyboard scan code to assign as shortcut
     },
+```
+
+itemParser:
+
+```javascript
+// this is called just before the item is sent to the browser app.
+function({buttons, item}) {
+    // buttons is an array of buttons
+    // item - the original data in stream
+
+    return {buttons: newButtons, item: await getSomeMoreData(item)}
+    // all returned
+}
 ```
 
 ### Samples
