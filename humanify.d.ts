@@ -19,6 +19,11 @@ declare module 'humanify' {
         debug: Function;
     }
 
+    interface ItemParserArg {
+        buttons: HumanifyChoice;
+        item?: object;
+    }
+
     export interface HumanifyOptions {
         serialize?: (chunk: any) => string;
         deserialize?: (data: string) => any;
@@ -27,7 +32,7 @@ declare module 'humanify' {
         duplicates?: number;
         minAnswers?: number;
         logger?: Logger;
-        itemParser: function({buttons: HumanifyChoice[], item: Object}) : {buttons: HumanifyChoice[], item?: Object}
+        itemParser: (arg: ItemParserArg) => ItemParserArg;
         maxBufferLength?: number;
     }
 
