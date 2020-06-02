@@ -1,15 +1,16 @@
+// @ts-nocheck
+
 const assert = require('assert');
 const os = require("os");
 const host = os.hostname();
 
 const streams = {};
 
-beforeAll(async () => {
-    const [input, output] = await require("../lib/start-humanify")();
-    Object.assign(streams, {input, output});
-})
-
 describe('Humanify App', () => {
+    before(async () => {
+        const [input, output] = await require("../lib/start-humanify")();
+        Object.assign(streams, {input, output});
+    })
 
     it('should pass the minimal example', async () => {
         await browser.url(`http://${host}:3333/`);
@@ -58,6 +59,4 @@ describe('Humanify App', () => {
         );
 
     });
-
-    it.skip('should pass a multi-root example')
 });

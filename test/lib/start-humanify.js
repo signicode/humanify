@@ -3,7 +3,7 @@ const {DataStream} = require("scramjet");
 /**
  * @param {HumanifyOptions}
  */
-module.exports = async (extraOptions) => {
+module.exports = async (extraOptions = {}) => {
     const input = new DataStream();
 
     /**

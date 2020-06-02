@@ -8,20 +8,6 @@ exports.config = {
     // on a remote machine).
     runner: 'local',
     //
-    // =====================
-    // Server Configurations
-    // =====================
-    // Host address of the running Selenium server. This information is usually obsolete as
-    // WebdriverIO automatically connects to localhost. Also, if you are using one of the
-    // supported cloud services like Sauce Labs, Browserstack, or Testing Bot you don't
-    // need to define host and port information because WebdriverIO can figure that out
-    // according to your user and key information. However, if you are using a private Selenium
-    // backend you should define the host address, port, and path here.
-    //
-    hostname: 'selenium-firefox',
-    port: 4444,
-    path: '/wd/hub/',
-    //
     // ==================
     // Specify Test Files
     // ==================
@@ -60,6 +46,10 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
+
+        hostname: 'selenium-firefox',
+        port: 4444,
+        path: '/wd/hub/',
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -126,10 +116,13 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'jasmine',
+    framework: 'mocha',
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
+    //
+    // Whether or not retried specfiles should be retried immediately or deferred to the end of the queue
+    // specFileRetriesDeferred: false,
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
@@ -138,17 +131,9 @@ exports.config = {
 
     //
     // Options to be passed to Jasmine.
-    jasmineNodeOpts: {
-        //
-        // Jasmine default timeout
-        defaultTimeoutInterval: 60000,
-        //
-        // The Jasmine framework allows interception of each assertion in order to log the state of the application
-        // or website depending on the result. For example, it is pretty handy to take a screenshot every time
-        // an assertion fails.
-        expectationResultHandler: function(passed, assertion) {
-            // do something
-        }
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60000
     },
 
     //
