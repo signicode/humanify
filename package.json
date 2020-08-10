@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.8",
-    "@types/node": "^14.0.24",
+    "@types/node": "^14.0.27",
     "@wdio/cli": "^6.3.4",
     "@wdio/firefox-profile-service": "^6.1.14",
     "@wdio/jasmine-framework": "^6.3.0",
