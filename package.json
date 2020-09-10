@@ -27,7 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "scramjet": "^4.34.5",
+    "scramjet": "^4.34.6",
     "socket.io": "^2.3.0"
   },
   "scripts": {
@@ -37,14 +37,14 @@
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.8",
-    "@types/node": "^14.6.4",
-    "@wdio/cli": "^6.4.6",
-    "@wdio/firefox-profile-service": "^6.4.0",
-    "@wdio/jasmine-framework": "^6.4.0",
-    "@wdio/local-runner": "^6.4.6",
-    "@wdio/mocha-framework": "^6.4.0",
-    "@wdio/selenium-standalone-service": "^6.4.0",
-    "@wdio/spec-reporter": "^6.4.0",
+    "@types/node": "^14.10.0",
+    "@wdio/cli": "^6.4.7",
+    "@wdio/firefox-profile-service": "^6.4.7",
+    "@wdio/jasmine-framework": "^6.4.7",
+    "@wdio/local-runner": "^6.4.7",
+    "@wdio/mocha-framework": "^6.4.7",
+    "@wdio/selenium-standalone-service": "^6.4.7",
+    "@wdio/spec-reporter": "^6.4.7",
     "chromedriver": "^85.0.1",
     "digest-stream": "^2.0.0",
     "eslint": "^7.8.1",
