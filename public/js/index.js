@@ -1,4 +1,4 @@
-/* globals jQuery */
+/* globals jQuery,location */
 (function($) {
 
     /* globals io, Handlebars */
@@ -9,8 +9,8 @@
 
     const liveQuestions = {};
 
-    const base = location.pathname.replace(/\/(([^\/]\.[^\/]))?$/, '');
-    console.log(`Connecting to ${base}`)
+    const base = location.pathname.replace(/\/(([^/]\.[^/]))?$/, "");
+    console.log(`Connecting to ${base}`);
     const socket = io(base);
 
     $("#questions").on("click", ".question .btn", (btn) => {
