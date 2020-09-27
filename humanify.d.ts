@@ -1,3 +1,5 @@
+import { DataStream } from "scramjet";
+
 /**
  * Humanify module.
  * @param dataStream
@@ -32,9 +34,9 @@ declare module 'humanify' {
         duplicates?: number;
         minAnswers?: number;
         logger?: Logger;
-        itemParser: (arg: ItemParserArg) => ItemParserArg;
+        itemParser: (arg: any) => ItemParserArg;
         maxBufferLength?: number;
     }
 
-    export default function Humanify(inputStream: ReadableStream, options: HumanifyOptions) : ReadableStream
+    export default function Humanify(inputStream: DataStream, options: HumanifyOptions) : DataStream
 }
