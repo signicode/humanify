@@ -1,6 +1,6 @@
 {
   "name": "humanify",
-  "version": "2.2.26",
+  "version": "2.2.27",
   "description": "Allows adding human input to data streams in node.js",
   "main": "lib/module.js",
   "keywords": [
